@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security-4.1.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<http use-expressions="true" auto-config="true">
+		<intercept-url pattern="/board/**" access="hasRole('ROLE_USER')"/>
+		<intercept-url pattern="/" access="permitAll" />
+		<intercept-url pattern="/board/dba/**" access="hasRole('ADMIN') and hasRole('DBA')" />
+		<form-login
+			login-page="/login"
+			authentication-failure-url="/error"
+			username-parameter="username"
+			password-parameter="password"
+		/>
+		<csrf/>
+		<logout logout-success-url="/"/>
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="admin" password="admin1234" authorities="ROLE_USER" />
+				<user name="jitaek" password="jitaek1234" authorities="ROLE_USER" />
+				<user name="dbaadmin" password="1234" authorities="ADMIN, DBA" /> 
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>
