@@ -1,0 +1,86 @@
+html, body {
+	margin: 0px;
+	height: 100vh;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	height: 100vh;
+	background: #e0e1e2;
+}
+
+header {
+	background: #0035f7;
+	color: white;
+	height: 13vh;
+}
+
+.vcenter {
+	position: relative;
+	top:50%;
+	transform: translateY(-50%);
+}
+
+.title {
+	margin: 0;
+	text-align: center;
+}
+
+nav {
+	height: 7vh;
+	background: #a8c6f7;
+	color: white;
+}
+
+nav a {
+	display: inline-block;
+	margin-left: 20px;
+
+}
+
+#container {
+	height: 80vh;
+}
+
+section {
+	min-height: 75vh;
+	width: 90%;
+	margin: 0 5%;
+}
+
+section h2 {
+	margin: 0px;
+	text-align: center;
+}
+
+section ol {
+	margin: 0px;
+}
+
+section table, th, td {
+	text-align: center;
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+table {
+	margin: 0 auto;
+}
+
+table td {
+	padding: 0px 10px;
+}
+
+footer {
+	height: 5vh;
+	width: 100%;
+	background: #475b75;
+	color: white;
+	text-align: center;
+	margin-top: 1vh;
+}
+
+footer p {
+	margin: 0;
+}
