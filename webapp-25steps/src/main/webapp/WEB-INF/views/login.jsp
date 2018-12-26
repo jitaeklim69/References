@@ -15,6 +15,7 @@
 %>
 	<h1>My First JSP</h1>
 	<p>Hello, ${name}</p>
+	<p>Your password: ${password }</p>
 	<div>current time: <%= date %></div>
 </body>
 </html>
