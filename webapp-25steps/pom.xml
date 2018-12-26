@@ -35,6 +35,7 @@
 					<version>2.2</version>
 					<configuration>
 						<path>/</path>
+						<uriEncoding>utf-8</uriEncoding>
 						<contextReloadable>true</contextReloadable>
 					</configuration>
 				</plugin>

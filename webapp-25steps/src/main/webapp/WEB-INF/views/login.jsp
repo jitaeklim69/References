@@ -7,6 +7,7 @@
 <title>My Todo - From JSP</title>
 </head>
 <body>
-	My First JSP
+	<h1>My First JSP</h1>
+	<p>Hello, ${name}</p>
 </body>
 </html>

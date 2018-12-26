@@ -15,16 +15,11 @@ public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		/*out.println("<html>");
-		out.println("<head>");
-		out.println("<title>My Todo</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("My First Servlet");
-		out.println("</body>");
-		out.println("</html>");*/
-		
+//		String name = new String(request.getParameter("name").getBytes("8859_1"), "utf-8");
+		String name = request.getParameter("name");
+//		System.out.println(name);
+		// parameter to attribute
+		request.setAttribute("name", name);
 		request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
 	}
 
