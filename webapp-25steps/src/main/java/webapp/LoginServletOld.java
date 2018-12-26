@@ -29,8 +29,8 @@ import javax.servlet.http.HttpServletResponse;
 //3. doGet(HttpServletRequest request, HttpServletResponse response)
 //4. How is the response created?
 
-@WebServlet(urlPatterns = "/login.do")
-public class LoginServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/login.do.old")
+public class LoginServletOld extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
