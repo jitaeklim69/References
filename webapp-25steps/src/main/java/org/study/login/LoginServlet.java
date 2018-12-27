@@ -1,4 +1,4 @@
-package org.study;
+package org.study.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +14,7 @@ import org.study.todo.TodoService;
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet{
 
-	private UserValidationService userValidationService = new UserValidationService();
+	private LoginService userValidationService = new LoginService();
 	private TodoService todoService = new TodoService();
 	
 	@Override
