@@ -9,13 +9,10 @@
 <title>My Todo - From JSP</title>
 </head>
 <body>
-<%
-	System.out.println(request.getParameter("name"));
-	Date date = new Date();
-%>
-	<h1>My First JSP</h1>
-	<p>Hello, ${name}</p>
-	<p>Your password: ${password }</p>
-	<div>current time: <%= date %></div>
+	<h1>Login Page</h1>
+	<form action="/login.do" method="post">
+		<div>Enter your name: <input type="text" name="name"></div>
+		<div><input type="submit" value="login"></div>
+	</form>
 </body>
 </html>
