@@ -9,5 +9,9 @@
 <body>
 	<h1>Welcome Page</h1>
 	<p>Welcome, ${name }</p>
+	<div>
+		<h3>Your Todo's are, </h3>
+		${todos }
+	</div>
 </body>
 </html>

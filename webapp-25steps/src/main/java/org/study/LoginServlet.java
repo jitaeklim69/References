@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.study.todo.TodoService;
+
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet{
 
-	private UserValidationService service = new UserValidationService();
+	private UserValidationService userValidationService = new UserValidationService();
+	private TodoService todoService = new TodoService();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,8 +29,9 @@ public class LoginServlet extends HttpServlet{
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		
-		if (service.isUserValid(name, password)) {
+		if (userValidationService.isUserValid(name, password)) {
 			request.setAttribute("name", name);
+			request.setAttribute("todos", todoService.retrieveTodos());
 			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credential");
