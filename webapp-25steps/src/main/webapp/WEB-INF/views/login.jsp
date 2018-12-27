@@ -10,8 +10,11 @@
 </head>
 <body>
 	<h1>Login Page</h1>
+	
 	<form action="/login.do" method="post">
+		<div style="color: red">${errorMessage }</div>
 		<div>Enter your name: <input type="text" name="name"></div>
+		<div>Enter your password: <input type="password" name="password"></div>
 		<div><input type="submit" value="login"></div>
 	</form>
 </body>
