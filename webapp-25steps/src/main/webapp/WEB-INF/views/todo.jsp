@@ -14,7 +14,7 @@
 		<h3>Your Todo's are, </h3>
 		<ol>
 			<c:forEach items="${todos }" var="todo">
-				<li>${todo.name}</li>
+				<li>${todo.name} <span><a href="/delete-todo.do?todo=${todo.name}">Delete</a></span></li>
 			</c:forEach>
 		</ol>
 	</div>
