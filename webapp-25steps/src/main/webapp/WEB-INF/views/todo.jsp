@@ -8,7 +8,7 @@
 <title>My Todo</title>
 </head>
 <body>
-	<h1>Todo Page - </h1>
+	<h1>Todo Page - ${name }</h1>
 
 	<div>
 		<h3>Your Todo's are, </h3>
