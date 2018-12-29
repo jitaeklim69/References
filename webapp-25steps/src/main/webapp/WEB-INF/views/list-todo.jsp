@@ -21,14 +21,7 @@
 		</ol>
 		
 		<div>
-			<form action="/add-todo.do" method="post" class="form-inline">
-				<div class="form-group">
-					<label for="todo">New Todo: </label>
-					<input id="todo" type="text" name="todo">
-				</div>
-				
-				<button type="submit" class="btn btn-primary">Add</button>
-			</form>
+			<h3>New Todo: <a class="btn btn-primary btn-sm" href="/add-todo.do">Add </a></h3>
 		</div>
 	</div>
 
