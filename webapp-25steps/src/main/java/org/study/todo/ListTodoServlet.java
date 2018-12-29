@@ -11,15 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.study.todo.TodoService;
 
-@WebServlet(urlPatterns = "/delete-todo.do")
-public class DeleteTodoServlet extends HttpServlet{
+@WebServlet(urlPatterns = "/list-todo.do")
+public class ListTodoServlet extends HttpServlet{
 
 	private TodoService todoService = new TodoService();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		todoService.deleteTodo(new Todo(request.getParameter("todo")));
+		request.setAttribute("todos", todoService.retrieveTodos());
+		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String newTodo = request.getParameter("todo");
+		todoService.addTodo(new Todo(newTodo));
+
 		response.sendRedirect("/list-todo.do");
 	}
 }
