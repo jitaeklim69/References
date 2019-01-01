@@ -9,13 +9,16 @@
 		<h3>Your New Todo: </h3>
 		
 		<div>
-			<form action="/add-todo.do" method="post" class="form-inline">
+			<form action="/add-todo.do" method="post">
 				<div class="form-group">
-					<label for="todo">New Todo: </label>
-					<input id="todo" type="text" name="todo">
+					<label for="desc">Description: </label>
+					<input id="desc" type="text" name="todo" class="form-control">
 				</div>
-				
-				<button type="submit" class="btn btn-primary">Add</button>
+				<div class="form-group">
+					<label for="category">Category: </label>
+					<input id="category" type="text" name="category" class="form-control">
+				</div>
+				<button type="submit" class="btn btn-primary">Add New Todo</button>
 			</form>
 		</div>
 	</div>

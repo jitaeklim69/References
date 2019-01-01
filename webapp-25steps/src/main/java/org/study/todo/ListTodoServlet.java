@@ -22,13 +22,4 @@ public class ListTodoServlet extends HttpServlet{
 		request.setAttribute("todos", todoService.retrieveTodos());
 		request.getRequestDispatcher("/WEB-INF/views/list-todo.jsp").forward(request, response);
 	}
-
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String newTodo = request.getParameter("todo");
-		todoService.addTodo(new Todo(newTodo));
-
-		response.sendRedirect("/list-todo.do");
-	}
 }
