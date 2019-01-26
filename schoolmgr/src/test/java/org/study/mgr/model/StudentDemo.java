@@ -131,4 +131,70 @@ public class StudentDemo {
 		}
 	}
 
+	@Test
+	public void testUpdateStudent() {
+		// create session factory
+		SessionFactory factory = new Configuration()
+									.configure("hibernate.cfg.xml")
+									.addAnnotatedClass(Student.class)
+									.buildSessionFactory();
+		// create session
+		Session session = factory.getCurrentSession();
+		
+		try {	
+			String studentId = "STX_00001";
+			// start a transaction
+			session.beginTransaction();
+			Student theStudent = session.get(Student.class, studentId);
+			log.info(theStudent);
+			
+			theStudent.setFirstName("Daisy");
+			
+			session.createQuery("update Student set email='foo@gmail.com'"
+							+ " where id = 'STX_00112'").executeUpdate();
+			
+			// commit transaction
+			session.getTransaction().commit();
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("fail to update an object...");
+		} finally {
+			factory.close();
+		}
+	}
+	
+	@Test
+	public void testDeleteStudent() {
+		// create session factory
+		SessionFactory factory = new Configuration()
+									.configure("hibernate.cfg.xml")
+									.addAnnotatedClass(Student.class)
+									.buildSessionFactory();
+		// create session
+		Session session = factory.getCurrentSession();
+		
+		try {	
+			String studentId = "STX_00082";
+			// start a transaction
+			session.beginTransaction();
+			/*Student theStudent = session.get(Student.class, studentId);
+			log.info(theStudent);
+			
+			session.delete(theStudent);*/
+			
+			session.createQuery("delete from Student where id = 'STX_00092'").executeUpdate();
+			
+			// commit transaction
+			session.getTransaction().commit();
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("fail to delete an object...");
+		} finally {
+			factory.close();
+		}
+	}
 }
