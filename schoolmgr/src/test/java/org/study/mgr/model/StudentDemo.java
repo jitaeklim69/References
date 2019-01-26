@@ -2,6 +2,8 @@ package org.study.mgr.model;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -82,6 +84,48 @@ public class StudentDemo {
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail("fail to save an object...");
+		} finally {
+			factory.close();
+		}
+	}
+	
+	@Test
+	public void testQueryStudent() {
+		// create session factory
+		SessionFactory factory = new Configuration()
+									.configure("hibernate.cfg.xml")
+									.addAnnotatedClass(Student.class)
+									.buildSessionFactory();
+		// create session
+		Session session = factory.getCurrentSession();
+		
+		try {	
+			// start a transaction
+			session.beginTransaction();
+			
+			List<Student> theStudents = null;
+			/*List<Student> theStudents = session.createQuery("from Student").getResultList();
+			
+			for (Student tempStudent : theStudents) {
+				System.out.println(tempStudent);
+			}*/
+			
+			/*theStudents = session.createQuery("from Student s where s.lastName='Duck'", Student.class).getResultList();
+			for (Student tempStudent : theStudents) {
+				System.out.println(tempStudent);
+			}*/
+			
+			theStudents = session.createQuery("from Student s where" 
+						+ " s.email LIKE '%gmail.com'", Student.class).getResultList();
+			for (Student tempStudent : theStudents) {
+				System.out.println(tempStudent);
+			}
+			
+			// commit transaction
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail("fail to query an object...");
 		} finally {
 			factory.close();
 		}
