@@ -7,7 +7,7 @@
 	<session-factory>
 		<!-- JDBC Database connection settings -->
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-		<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:xe</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.219.195:1521:xe</property>
 		<property name="hibernate.connection.username">hibtester</property>
 		<property name="hibernate.connection.password">1234</property>
 		
