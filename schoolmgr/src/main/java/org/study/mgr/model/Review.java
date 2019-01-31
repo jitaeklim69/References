@@ -13,15 +13,16 @@ import javax.persistence.Table;
 public class Review {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Review_SEQ")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Review_SEQ")
 	@SequenceGenerator(sequenceName = "review_seq", allocationSize = 1, name = "Review_SEQ")
 	@Column(name = "id")
 	private int id;
-	
-	@Column(name = "comment")
+
+	@Column(name = "comm")
 	private String comment;
-	
-	public Review() {}
+
+	public Review() {
+	}
 
 	public Review(String comment) {
 		super();
@@ -48,6 +49,5 @@ public class Review {
 	public String toString() {
 		return "Review [id=" + id + ", comment=" + comment + "]";
 	}
-	
-	
+
 }

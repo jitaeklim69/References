@@ -33,6 +33,10 @@
 		<property name="hibernate.dbcp.minIdle">5</property>
 		<property name="hibernate.dbcp.maxWaitMillis">-1</property>
 		
-		<mapping class="org.study.mgr" />
+		<mapping class="org.study.mgr.model.Course" />
+		<mapping class="org.study.mgr.model.Instructor" />
+		<mapping class="org.study.mgr.model.InstructorDetail" />
+		<mapping class="org.study.mgr.model.Review" />
+		<mapping class="org.study.mgr.model.Student" />
 	</session-factory>
 </hibernate-configuration>
