@@ -1,0 +1,10 @@
+spring project setup
+
+ 1. create spring legacy project
+  - spring mvc project from eclipse
+  - modify pom file
+  - add database driver 
+  - add testcase for db connection
+
+ 
+
