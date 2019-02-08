@@ -6,5 +6,10 @@ spring project setup
   - add database driver 
   - add testcase for db connection
 
- 
+ 2. modify pom.xml to include
+  - spring framework 
+  - jstl
+  - hibernate
+  
+
 
