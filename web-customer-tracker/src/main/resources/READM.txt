@@ -11,5 +11,9 @@ spring project setup
   - jstl
   - hibernate
   
-
+ 3. configure for Spring + Hibernate
+  - define datasource / connection pool
+  - setup Hibernate session factory
+  - setup Hibernate transaction manager
+  - enable configuration of transactional annotations
 
